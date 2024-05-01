@@ -1,0 +1,5 @@
+data/
+*.pkl
+data.zip
+practice.ipynb
+sec_reviews_scrap.ipynb
