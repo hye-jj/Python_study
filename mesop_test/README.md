@@ -1,5 +1,5 @@
 ### mesop start kit
-아래의 코드 py 파일로 작성
+start kit 코드 py 파일로 작성 (mesop_test.py)
 가상환경(파이썬 환경) 접속 > mesop 해당파일.py 실행
 
 출처 : https://google.github.io/mesop/  (Made with Mesop)
