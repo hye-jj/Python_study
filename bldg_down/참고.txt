@@ -1,0 +1,15 @@
+1. 가상환경만들기 (python 버전 확인)
+
+pip freeze > requirements.txt 으로 기존 패키지 확인 및 필요패키지만 남기기
+가상환경 이동
+pip install -r requirements.txt 
+필수 패키지 설치
+> python 프로그램 실행 및 시간 확인, 에러 없는지 체크
+> 다운로드 파일 리스트 config 로 이동
+
+
+2. 파이썬 실행파일 만들기
+python -m pip install pyinstaller  
+pyinstaller --onefile --console bldg_download.py
+
+
