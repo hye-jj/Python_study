@@ -1,0 +1,24 @@
+<div class="header">
+    <div> 
+        <h1> KOOKMIN </h1> 
+    </div>
+    
+    <div>
+        <span>NAV1</span>
+        <span>NAV2</span>
+        <span>NAV3</span>
+
+        <!-- user 인증받았는지, 로그인 상태표시. -->
+        <!-- 장고 user 관리, auth_user 에서 제공하는 매소드 로그인한 사용자=user -->
+        {% if not user.is_authenticated %}
+            <a href="{% url 'accountapp:login' %}" class="">
+                <span>login</span>
+            </a>
+        {% else %}
+            <a href="{% url 'accountapp:logout' %}" class="">
+                <span>logout</span>
+            </a>
+        {% endif %}
+
+    </div>
+</div>
