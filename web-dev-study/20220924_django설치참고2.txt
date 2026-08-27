@@ -1,0 +1,57 @@
+import os
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # html 파일을 장고에서는 템플릿으로 부른다. 
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+
+
+LANGUAGE_CODE = 'ko-kr'
+
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES = [
+    BASE_DIR/"static",
+]
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+
+
+
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+hjchoi
+hjchoi
+
+python manage.py runserver 
+http://127.0.0.1:8000/admin - 테이블(DB) 관리
+
+https://sqlitebrowser.org/  <<<접속 및 설치, 데이터 다루는 툴
+
+
+
