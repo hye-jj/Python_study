@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+<!-- 부트스트랩 라이브러리처럼 히용 load -->
+{% load bootstrap4 %}
+
+{% block content %}
+<div>
+    <h4> User Info(Detail) </h4>
+
+    <div>
+        <p> username : {{ objUser.username }}</p>
+        <p> date_joined : {{ objUser.date_joined }}</p>
+    </div>
+</div>
+{% endblock %}

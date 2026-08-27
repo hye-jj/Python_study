@@ -1,0 +1,58 @@
+<div class="header" style="height: 13rem ;">
+    <div style="text-align: left; margin: auto; padding: var(--bs-gutter-x,.75rem);"> 
+        <br>
+
+        <h1> FindAll </h1> 
+    </div>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} t-my-[0px]">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    
+    <div class="fixed-top" style="color: aliceblue;">
+    </div>
+
+    <!-- user 인증받았는지, 로그인 상태표시. -->
+        <!-- 장고 user 관리, auth_user 에서 제공하는 매소드 로그인한 사용자=user -->
+        <div class="m-2 me-auto" style="text-align: right;">
+            {% if not user.is_authenticated %}
+            <span>로그인을 하시겠습니까? </span>
+                <a href="{% url 'accountapp:login' %}" class="">
+                    <span>login</span>
+                </a>
+            {% else %}
+                <a href="{% url 'accountapp:logout' %}" class="">
+                    <span>logout</span>
+                </a>
+            {% endif %}
+        </div>
+
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light  me-auto">
+            <div class="container m=5">
+                <a class="navbar-brand" href="{% url 'mvtapp:detail' %}""><i class="fab fa-pied-piper-hat"></i> Home </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'mvtapp:result' %}"><i class="fas fa-tshirt"></i> 검색결과 </a>
+                        </li>
+
+                        <li class="nav-item" >
+                            <a class="nav-link" href="{% url 'accountapp:create' %}"><i class="fas fa-users"></i> 아이디등록 </a>
+                        </li>                     
+                    </ul>  
+                </div>
+            </div>
+        </nav>
+
+        
+
+    </div>
+</div>

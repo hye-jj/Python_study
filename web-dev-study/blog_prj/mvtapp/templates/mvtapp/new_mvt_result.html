@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="text-align: center;">
+    <!-- <p>가변영역(콘텐츠가 담길것입니다!!!)</p> -->
+
+    <form action="/mvtapp/result/" method="post">
+        {% csrf_token %}
+        <div style="margin: 2rem;">
+            <h2> 검색결과 </h2>
+        </div>
+    </form>
+    <div style="overflow:scroll; height:30rem; text-align:center">
+
+    {% if datas %}  <!-- 키 체크, for문에 datas 없는경우 404 화면 -->'
+    <div class="" style="text-align: left; margin: 3rem; background-color: antiquewhite; border-radius: 10px; padding-left: var(--bs-gutter-x,.75rem);"> 
+        <span class="text-muted"> 검색결과 </span>
+    
+        {% for data in datas %}
+        <div>
+            {%if data.text %}
+            <h5> 검색어 : {{ data.item }}   </h5>
+                <div class="col-10" style=" margin: 3rem; background-color: palevioletred; border-radius: 10px; padding-left: var(--bs-gutter-x,.75rem);"> 
+                {{ data.title }} 
+                {{ data.text }} 
+                </div>
+                바로가기 : {{  data.url  }}  
+                
+                <h2> </h2>     
+            
+            {% endif %} 
+
+        {% endfor %} <!-- 끝났는지 모르기 때문에 끝남을 표시해줘야함. 반드시! -->
+        </div> 
+    {% endif %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

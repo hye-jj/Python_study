@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+<!-- 부트스트랩 라이브러리처럼 히용 load -->
+{% load bootstrap4 %}
+
+{% block content %}
+<div style="text-align: center;">
+    <h3> Registration </h3>
+    <div style="text-align: center; width:20rem; margin: 2rem auto">
+        <form action="{% url 'accountapp:create' %}" method="post">
+            {% csrf_token %}
+
+            <!-- AccountCreateView 실행될 때, create.html이 랜더링되면서 들어오는 폼 UserCreationForm-->
+            {% bootstrap_form form %}
+            
+            <input type="submit" class="btn btn-warning mt-3">
+        </form>
+    </div>
+</div>
+{% endblock %}

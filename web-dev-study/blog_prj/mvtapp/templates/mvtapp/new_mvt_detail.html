@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="text-align: center;">
+    <!-- <p>가변영역(콘텐츠가 담길것입니다!!!)</p> -->
+
+    <form action="/mvtapp/detail/" method="post">
+        {% csrf_token %}
+        <div style="margin: 6rem;">
+            <h2> 검색창 </h2>
+            <!-- name : 변수(variable) -->
+            <input type="text" name="search" placeholder="검색어를 입력하세요. " 
+            value="{{request.Post.search}}"> 
+            <input type="submit" class="btn btn-warning">
+        </div>
+    </form>
+
+    <div style="overflow:scroll; height:15rem; text-align:center">
+    {% if user.is_authenticated %}
+    {{user.name}}
+        {% if datas %}  <!-- 키 체크, for문에 datas 없는경우 404 화면 -->'
+        <div class="" style="text-align: left; margin: 3rem; height: 5rem; background-color: antiquewhite; border-radius: 10px; padding-left: var(--bs-gutter-x,.75rem);"> 
+            <span class="text-muted"> 최근검색 아이템 : </span>
+        
+            {% for data in datas %}
+            {{ data.item }} ,
+            {% endfor %} <!-- 끝났는지 모르기 때문에 끝남을 표시해줘야함. 반드시! -->
+        {% endif %}
+    {% else %}
+    <div class="" style="text-align: left; margin: 3rem; height: 5rem; background-color: antiquewhite; border-radius: 10px; padding-left: var(--bs-gutter-x,.75rem);"> 
+        <span class="text-muted"> 최근검색어, 로그인하시면 이용가능합니다. </span>
+    {% endif %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
