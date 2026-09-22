@@ -3,7 +3,7 @@
 모바일 퍼즐 게임 **Cookie Cats**의 A/B 테스트 데이터를 활용해,  <br>
 스테이지 진행을 막는 "게이트"의 위치(레벨 30 vs 40)가 사용자 유지(재접속)에 미치는 영향을 분석한 프로젝트입니다.
 
----
+<br>
 
 ### 📌 프로젝트 배경 및 목적
 
@@ -46,10 +46,10 @@
 - **통계 기법**: 카이제곱 독립성 검정(Chi-square test), 부트스트랩(Bootstrap resampling)
 
 
-### ▶️ 실행 방법
+### ▶️ 사용 라이브러리
 
 ```bash
-pip install pandas numpy scipy matplotlib
+pip install pandas numpy scipy matplotlib kagglehub
 ```
 
 ### 📊 주요 인사이트
